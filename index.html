@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sôngho en Ligne - AJAX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h2>SÔNGHO EN LIGNE</h2>
+        
+        <div id="player-role-setup">
+            <span>Cet écran contrôle le : </span>
+            <select id="role-selector">
+                <option value="1">Joueur 1 (Bas)</option>
+                <option value="2" selected>Joueur 2 (Haut)</option>
+            </select>
+        </div>
+
+        <div id="turn-indicator">Connexion au serveur de données...</div>
+        
+        <div id="board">
+            <div class="row row-j2">
+                <div class="hole" data-index="13"></div>
+                <div class="hole" data-index="12"></div>
+                <div class="hole" data-index="11"></div>
+                <div class="hole" data-index="10"></div>
+                <div class="hole" data-index="9"></div>
+                <div class="hole" data-index="8"></div>
+                <div class="hole" data-index="7"></div>
+            </div>
+
+            <div class="row row-j1">
+                <div class="hole" data-index="0"></div>
+                <div class="hole" data-index="1"></div>
+                <div class="hole" data-index="2"></div>
+                <div class="hole" data-index="3"></div>
+                <div class="hole" data-index="4"></div>
+                <div class="hole" data-index="5"></div>
+                <div class="hole" data-index="6"></div>
+            </div>
+        </div>
+
+        <div id="scores">
+            <div>Joueur 2 (Haut) : <span id="score-j2">0</span> pions</div>
+            <div>Joueur 1 (Bas) : <span id="score-j1">0</span> pions</div>
+        </div>
+        
+        <br>
+        <button id="reset-btn">Réinitialiser la partie en ligne</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
