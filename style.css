@@ -7,6 +7,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 #game-container {
@@ -43,11 +44,39 @@ body {
 }
 
 #player-role-setup {
-    margin-bottom: 10px;
-    font-size: 0.9rem;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
 }
 
-/* Tablier */
+#role-selector {
+    padding: 3px 8px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* Zone de notification dynamique */
+#notification {
+    min-height: 25px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #d32f2f;
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+    border-radius: 5px;
+    padding: 8px;
+    display: none; /* Masqué par défaut */
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Animation de secousse en cas d'erreur ou d'indication */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+/* Le Tablier */
 #board {
     background-color: #8b5a2b;
     padding: 20px;
@@ -64,6 +93,7 @@ body {
     justify-content: center;
 }
 
+/* Les Trous */
 .hole {
     width: 65px;
     height: 65px;
@@ -82,7 +112,7 @@ body {
 
 .hole:hover { transform: scale(1.05); }
 
-/* Zone de scores */
+/* Zone des scores */
 #scores {
     display: flex;
     justify-content: space-between;
@@ -99,7 +129,7 @@ body {
 .score-box h3 { margin: 0 0 5px 0; font-size: 1rem; color: #5c3a21;}
 .score-box p { margin: 0; font-size: 1.2rem; font-weight: bold; }
 
-/* Traces et Logs de jeu */
+/* Traces et Logs de jeu (Terminal de suivi) */
 #log-container {
     margin-top: 20px;
     background-color: #1e1e1e;
@@ -141,5 +171,6 @@ button {
     cursor: pointer;
     font-weight: bold;
     margin-top: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 button:hover { background-color: #5c3a21; }
