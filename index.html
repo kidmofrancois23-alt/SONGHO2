@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sôngho en Ligne - AJAX</title>
+    <title>Sôngho Pro en Ligne - AJAX</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="game-container">
-        <h2>SÔNGHO EN LIGNE</h2>
+        <h2>SÔNGHO PRO - EN LIGNE</h2>
         
         <div id="player-role-setup">
             <span>Cet écran contrôle le : </span>
@@ -19,7 +19,11 @@
             </select>
         </div>
 
-        <div id="turn-indicator">Connexion au serveur de données...</div>
+        <div id="status-panel">
+            <div class="status-item">Statut du jeu : <span id="game-status" class="badge progress-badge">En cours</span></div>
+            <div class="status-item">Numéro du Tour : <span id="tour-count">1</span></div>
+            <div id="turn-indicator">Connexion...</div>
+        </div>
         
         <div id="board">
             <div class="row row-j2">
@@ -44,8 +48,21 @@
         </div>
 
         <div id="scores">
-            <div>Joueur 2 (Haut) : <span id="score-j2">0</span> pions</div>
-            <div>Joueur 1 (Bas) : <span id="score-j1">0</span> pions</div>
+            <div class="score-box J2">
+                <h3>Joueur 2 (Haut)</h3>
+                <p>Graines capturées : <span id="score-j2">0</span></p>
+            </div>
+            <div class="score-box J1">
+                <h3>Joueur 1 (Bas)</h3>
+                <p>Graines capturées : <span id="score-j1">0</span></p>
+            </div>
+        </div>
+
+        <div id="log-container">
+            <h3>Traces de jeu (Logs)</h3>
+            <div id="game-logs">
+                <div class="log-entry system">Initialisation de la partie...</div>
+            </div>
         </div>
         
         <br>
